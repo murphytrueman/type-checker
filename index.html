@@ -16,11 +16,34 @@
         <label>Your text</label>
         <input type="text" name="sentence" placeholder="The quick brown fox..."/>
       </div>
+
+      <div class="sidebar_item">
+        <label>Typeface<span class="typesize-output">64px</span></label>
+        <select name="typeface">
+          <option value="IBM Plex Sans">IBM Plex Sans</option>
+          <option value="Playfair Display">Playfair Display</option>
+          <option value="Work Sans">Work Sans</option>
+        </select>
+      </div>
+
+      <div class="sidebar_item">
+        <label>Type size<span class="typesize-output">64px</span></label>
+        <input type="range" name="typesize" min=12 max=200 value=64 />
+      </div>
+
+      <div class="sidebar_item">
+        <label>Leading<span class="lineheight-output">1.5</span></label>
+        <input type="range" name="lineheight" min=0.75 max=2.5 value=1.5 step=0.25 />
+      </div>
+
+      <div class="sidebar_item sidebar_checkbox">
+        <label>Italic</label>
+        <input type="checkbox" name="italic"/>
+      </div>
+
     </section>
 
-    <textarea class="output">
-      The quick brown fox jumps over the lazy dog
-    </textarea>
+    <textarea class="output">The quick brown fox jumps over the lazy dog</textarea>
 
     <script src="main.js" async defer></script>
   </body>
