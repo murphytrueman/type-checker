@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Work+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Epilogue:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Grenze:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=JetBrains+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Taviraj:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 
 @font-face {
@@ -19,8 +19,6 @@
   font-weight: 700;
   src: url(/fonts/faune-bold.woff2), url(/fonts/faune-bold.woff);
 }
-
-
 
 h1 {
   font-size: 24px;
@@ -58,9 +56,21 @@ body {
   align-items: center;
 }
 
+hr {
+  margin: 35px 0px 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  border-bottom: 0px;
+  border-left: 0px;
+  border-right: 0px;
+}
+
 label {
   display: block;
   margin-bottom: 5px;
+}
+
+label.lg {
+  margin-bottom: 10px;
 }
 
 label span {
@@ -70,7 +80,7 @@ label span {
 
 input[type="text"] {
   font-family: 'Faune', Arial, Helvetica, sans-serif;
-  width: 100%;
+  width: calc(100% - 14px);
   background-color: transparent;
   border: none;
   background-color: #2A2829;
@@ -82,12 +92,13 @@ input[type="text"] {
 .output {
   font-size: 64px;
   font-family: 'Faune', Arial, Helvetica, sans-serif;
-  width: 100%;
+  width: 95%;
   background: none;
   border: none;
   color: #FFFFFF;
   min-height: 90vh;
-  padding: 40px;
+  padding: 40px 80px 40px 40px;
+  letter-spacing: 1px;
 } 
 
 textarea:focus {
@@ -95,10 +106,6 @@ textarea:focus {
 }
 
 input[type="range"] {
-  width: 100%;
-}
-
-select {
   width: 100%;
 }
 
@@ -150,13 +157,48 @@ select {
   border: none;
   padding: 0 1em 0 0;
   margin: 0;
-  width: 100%;
+  width: calc(100% - 14px);
   font-family: inherit;
   font-size: inherit;
   cursor: inherit;
   line-height: inherit;
+  color: #FFFFFF;
+  letter-spacing: .5px;
 }
 
+select:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+select::-ms-expand {
+  display: none;
+}
+
+.select {
+  width: calc(100% - 14px);
+  border: 0;
+  padding: 5px 7px;
+  font-size: 14px;
+  cursor: pointer;
+  line-height: 1.4;
+  background-color: #2A2829;
+  background-image: linear-gradient(to top, #2A2829, #2A2829 33%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #FFFFFF;
+}
+
+.select::after {
+  content: "";
+  width: 0.8em;
+  height: 0.5em;
+  background-color: #FFFFFF;
+  clip-path: polygon(100% 0%, 0 0%, 50% 100%);
+  grid-area: select;
+  justify-self: end;
+}
 
 /* 
   Range input styling 
