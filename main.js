@@ -54,5 +54,11 @@ colourTags.forEach(tag => {
     tag.addEventListener("click", function() {
         outputTag.style.backgroundColor = this.style.backgroundColor
         outputTag.style.color = this.style.color
+    
+        colourTags.forEach(tag => {
+            tag.classList.remove("selected")
+        })
+
+        this.classList.add("selected")
     })
 })
